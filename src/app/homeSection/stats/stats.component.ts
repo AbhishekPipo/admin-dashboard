@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Color, ScaleType } from '@swimlane/ngx-charts';
-// import * as ApexCharts from 'apexcharts';
+import * as ApexCharts from 'apexcharts';
 // import { FeedsComponent } from '../feeds/feeds.component';
 
 
@@ -89,22 +89,22 @@ export class StatsComponent {
       },
     };
 
-  //   if (document.getElementById('area-chart') && typeof ApexCharts !== 'undefined') {
-  //     const chart = new ApexCharts(document.getElementById('area-chart'), options);
-  //     chart.render();
-  //   }
-  //   if (document.getElementById('area-chart-1') && typeof ApexCharts !== 'undefined') {
-  //     const chart = new ApexCharts(document.getElementById('area-chart-1'), options);
-  //     chart.render();
-  //   }
-  //   if (document.getElementById('area-chart-2') && typeof ApexCharts !== 'undefined') {
-  //     const chart = new ApexCharts(document.getElementById('area-chart-2'), options);
-  //     chart.render();
-  //   }
-  //   if (document.getElementById('area-chart-3') && typeof ApexCharts !== 'undefined') {
-  //     const chart = new ApexCharts(document.getElementById('area-chart-3'), options);
-  //     chart.render();
-  //   }
-  // }
+    if (document.getElementById('area-chart') && typeof ApexCharts !== 'undefined') {
+      const chart = new ApexCharts(document.getElementById('area-chart'), options);
+      chart.render();
+    }
+    if (document.getElementById('area-chart-1') && typeof ApexCharts !== 'undefined') {
+      const chart = new ApexCharts(document.getElementById('area-chart-1'), options);
+      chart.render();
+    }
+    if (document.getElementById('area-chart-2') && typeof ApexCharts !== 'undefined') {
+      const chart = new ApexCharts(document.getElementById('area-chart-2'), options);
+      chart.render();
+    }
+    if (document.getElementById('area-chart-3') && typeof ApexCharts !== 'undefined') {
+      const chart = new ApexCharts(document.getElementById('area-chart-3'), options);
+      chart.render();
+    }
   }
+ 
 }
