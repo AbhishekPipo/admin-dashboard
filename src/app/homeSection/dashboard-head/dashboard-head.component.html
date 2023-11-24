@@ -1,0 +1,51 @@
+<div class="main-div bg-gray-100 flex pt-4 pl-9 justify-between items-center">
+  <div class="dashboard mt-9">
+    <div class="dashboard-title flex items-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-arrow-narrow-left"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="3"
+        stroke="#007bff"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M5 12l14 0"></path>
+        <path d="M5 12l4 4"></path>
+        <path d="M5 12l4 -4"></path>
+      </svg>
+      <h1 class="mx-3 font-bold text-2xl">{{index}}</h1>
+    </div>
+    <div class="dashboard-path flex mt-2">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        class="w-5"
+        viewBox="0 0 32 32"
+        style="fill: #228be6"
+      >
+        <path
+          d="M 16 2.59375 L 15.28125 3.28125 L 2.28125 16.28125 L 3.71875 17.71875 L 5 16.4375 L 5 28 L 14 28 L 14 18 L 18 18 L 18 28 L 27 28 L 27 16.4375 L 28.28125 17.71875 L 29.71875 16.28125 L 16.71875 3.28125 Z M 16 5.4375 L 25 14.4375 L 25 26 L 20 26 L 20 16 L 12 16 L 12 26 L 7 26 L 7 14.4375 Z"
+        ></path>
+      </svg>
+      <span class="ml-2">/</span>
+      <h3 class="ml-2">Dashboard</h3>
+    </div>
+  </div>
+
+  <div class="right flex">
+    <div class="visitors-left  w-32 h-16 m-4 mt-10 text-center">
+      <app-visitors></app-visitors>
+      <p>Visitors</p>
+    </div>
+    <div class="visitors-right  w-32 h-16  m-4 mt-10 text-center">
+      <app-visits></app-visits>
+      <p>Visits</p>
+    </div>
+  </div>
+</div>

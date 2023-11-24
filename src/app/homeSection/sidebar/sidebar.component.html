@@ -1,0 +1,353 @@
+
+<aside
+  id="cta-button-sidebar"
+  class="bg-gray-300 sticky top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+  aria-label="Sidebar"
+>
+  <div class="h-full px-3 py-4 overflow-y-auto dark:bg-gray-800 hide-scrollbar">
+    
+    <!-- profile -->
+
+    <div class="profile flex mt-2 mx-3">
+      <img
+        class="rounded-full mr-3"
+        width="45"
+        height="40"
+        src="assets/user.png"
+        alt=""
+      />
+      <div class="profile-desc">
+        <p>welcome</p>
+        <h5 class="font-bold">Alize Thomas</h5>
+      </div>
+    </div>
+    <hr class="mt-3 mx-3" />
+    
+
+    <!-- user stats -->
+
+    <div class="user-stats flex justify-between my-3 mx-3">
+      <div class="sales">
+        <h6>Sales</h6>
+        <h5>456</h5>
+      </div>
+      <div class="order">
+        <h6>order</h6>
+        <h5>1350</h5>
+      </div>
+      <div class="revenue">
+        <h6>Revenue</h6>
+        <h5>$2.13B</h5>
+      </div>
+    </div>
+    <div class="tabs">
+      <div class="tab flex justify-between mx-1">
+         <button class="tablinks p-1 relative rounded-t-md  top-1 text-bo"
+                 [ngClass]="{'px-3 border-t border-l border-r text-blue-500': selectedCity === 'London'}"
+                 (click)="selectCity('London')">Menu</button>
+         <button class="tablinks p-1 relative rounded-t-md  top-1"
+                 [ngClass]="{'px-3 border-t border-l border-r text-blue-500': selectedCity === 'Paris'}"
+                 (click)="selectCity('Paris')">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-book" width="24" height="24" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+                  <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0"></path>
+                  <path d="M3 6l0 13"></path>
+                  <path d="M12 6l0 13"></path>
+                  <path d="M21 6l0 13"></path>
+               </svg>
+                
+                </button>
+         <button class="tablinks p-1 relative rounded-t-md  top-1"
+                 [ngClass]="{'px-3 border-t border-l border-r text-blue-500': selectedCity === 'Tokyo'}"
+                 (click)="selectCity('Tokyo')">
+                
+                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings-automation" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065z"></path>
+                  <path d="M10 9v6l5 -3z"></path>
+               </svg>
+                </button>
+         <button class="tablinks p-1 relative rounded-t-md  top-1"
+                 [ngClass]="{'px-3 border-t border-l border-r text-blue-500': selectedCity === 'Japan'}"
+                 (click)="selectCity('Japan')">
+                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+                  <path d="M12 16v.01"></path>
+                  <path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483"></path>
+               </svg>
+                
+                </button>
+       </div>
+
+      <div *ngIf="selectedCity === 'London'" class="tabcontent">
+        
+         <ul class="space-y-2 font-medium my-4">
+
+
+<!-- dropdown.component.html -->
+
+<li>
+  <button type="button" (click)="toggleDropdown('dropdown1')" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example1" [attr.data-collapse-toggle]="'dropdown-example1'">
+
+  <!-- <button type="button" (click)="toggleDropdown()" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" [attr.data-collapse-toggle]="'dropdown-example'"> -->
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="w-5" viewBox="0 0 32 32"
+    style="fill:#228BE6;">
+    <path d="M 16 2.59375 L 15.28125 3.28125 L 2.28125 16.28125 L 3.71875 17.71875 L 5 16.4375 L 5 28 L 14 28 L 14 18 L 18 18 L 18 28 L 27 28 L 27 16.4375 L 28.28125 17.71875 L 29.71875 16.28125 L 16.71875 3.28125 Z M 16 5.4375 L 25 14.4375 L 25 26 L 20 26 L 20 16 L 12 16 L 12 26 L 7 26 L 7 14.4375 Z"></path>
+    </svg>
+    <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>Daashboard</span>
+    <svg  *ngIf="!isBtnClicked" sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+    </svg>
+    <svg  *ngIf="isBtnClicked" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
+  </button>
+  <!-- <ul id="dropdown-example" [ngClass]="{'hidden': !isDropdownVisible}" class="py-2 space-y-2"> -->
+    <ul id="dropdown-example1" [ngClass]="{'hidden': !isDropdownVisible1}" class="py-2 space-y-2">
+
+    <li>
+      <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">hi</a>
+    </li>
+    <li>
+      <a routerLink="/iot" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">iot</a>
+    </li>
+    <li>
+      <a href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Invoice</a>
+    </li>
+  </ul>
+</li>
+<!-- dropdown.component.html -->
+
+<li>
+  <button type="button" (click)="toggleDropdown('dropdown2')" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example2" [attr.data-collapse-toggle]="'dropdown-example2'">
+
+  <!-- <button type="button" (click)="toggleDropdown()" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example" [attr.data-collapse-toggle]="'dropdown-example'"> -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-layout-grid text-blue-400" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+      <path d="M14 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+      <path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+      <path d="M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+   </svg>
+    <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>App</span>
+    <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+    </svg>
+  </button>
+  <!-- <ul id="dropdown-example" [ngClass]="{'hidden': !isDropdownVisible}" class="py-2 space-y-2"> -->
+    <ul id="dropdown-example2" [ngClass]="{'hidden': !isDropdownVisible2}" class="py-2 space-y-2">
+
+    <li>
+      <a (click)="gotoInbox($event)" href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Inbox</a>
+    </li>
+    <li>
+      <a  (click)="gotoChat()"  class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Chat</a>
+    </li>
+    
+    <li >
+      <a  (click)="gotoCal($event)"  class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Calander</a>
+    </li>
+    <li>
+      <a  (click)="gotoCont()"  class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Contact Card</a>
+    </li>
+  </ul>
+</li>
+
+           <!-- <li>
+             <a
+               href="#"
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+             >
+             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.0" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+               <path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path>
+            </svg>
+            
+               <span class="flex-1 ml-3 whitespace-nowrap">File Manager</span>
+               <span
+                 class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300"
+                 >3</span
+               >
+             </a>
+           </li> -->
+
+
+
+         <!-- dropdown.component.html -->
+
+<li>
+  <button type="button" (click)="toggleDropdown('dropdown3')" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-example3" [attr.data-collapse-toggle]="'dropdown-example3'">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-folder" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.0" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2"></path>
+    </svg>
+    <span class="flex-1 ml-3 text-left whitespace-nowrap" sidebar-toggle-item>File Manager</span>
+    <svg sidebar-toggle-item class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+    </svg>
+  </button>
+  <ul id="dropdown-example3" [ngClass]="{'hidden': !isDropdownVisible3}" class="py-2 space-y-2">
+    <li>
+      <a (click)="gotoDocs($event)" href="#" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Documents</a>
+    </li>
+    <li>
+      <a (click)="gotoMedia($event)" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Media</a>
+    </li>
+    <li>
+      <a (click)="gotoImages()" class="flex items-center w-full p-2 text-base font-normal text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 pl-11">Images</a>
+    </li>
+  </ul>
+</li>
+<!-- dropdown.component.html -->
+
+           <li>
+             <a
+               href="#"
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+             >
+             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-world" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.0" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+               <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"></path>
+               <path d="M3.6 9h16.8"></path>
+               <path d="M3.6 15h16.8"></path>
+               <path d="M11.5 3a17 17 0 0 0 0 18"></path>
+               <path d="M12.5 3a17 17 0 0 1 0 18"></path>
+            </svg>
+            
+               <span class="flex-1 ml-3 whitespace-nowrap">Blog</span>
+             </a>
+           </li>
+           <li>
+             <a
+               href="#"
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+             >
+             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-diamond" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.0" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+               <path d="M6 5h12l3 5l-8.5 9.5a.7 .7 0 0 1 -1 0l-8.5 -9.5l3 -5"></path>
+               <path d="M10 12l-2 -2.2l.6 -1"></path>
+            </svg>
+               <span class="flex-1 ml-3 whitespace-nowrap">UI Elements</span>
+             </a>
+           </li>
+           <li>
+             <a
+               href="#"
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+             >
+             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.0" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+               <path d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1"></path>
+            </svg>
+               <span class="flex-1 ml-3 whitespace-nowrap">Widget</span>
+             </a>
+           </li>
+           <li>
+             <a
+               href="#"
+               class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+             >
+             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-lock" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.0" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+               <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+               <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"></path>
+               <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0"></path>
+               <path d="M8 11v-4a4 4 0 1 1 8 0v4"></path>
+            </svg>
+               <span class="flex-1 ml-3 whitespace-nowrap">Authentication</span>
+             </a>
+           </li>
+
+
+           <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.0" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"></path>
+              <path d="M16 8v-2a2 2 0 0 0 -2 -2h-8a2 2 0 0 0 -2 2v8a2 2 0 0 0 2 2h2"></path>
+           </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Pages</span>
+            </a>
+          </li>
+
+
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4"></path>
+              <path d="M13.5 6.5l4 4"></path>
+           </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Forms</span>
+            </a>
+          </li>
+
+
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.0" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M7.5 7.5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+              <path d="M3 6v5.172a2 2 0 0 0 .586 1.414l7.71 7.71a2.41 2.41 0 0 0 3.408 0l5.592 -5.592a2.41 2.41 0 0 0 0 -3.408l-7.71 -7.71a2 2 0 0 0 -1.414 -.586h-5.172a3 3 0 0 0 -3 3z"></path>
+           </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Tables</span>
+            </a>
+          </li>
+
+
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-bar" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+              <path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+              <path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+              <path d="M4 20l14 0"></path>
+           </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Chart</span>
+            </a>
+          </li>
+
+
+          <li>
+            <a
+              href="#"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chart-bar" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="#007bff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M3 12m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+              <path d="M9 8m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+              <path d="M15 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+              <path d="M4 20l14 0"></path>
+           </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Maps</span>
+            </a>
+          </li>
+         </ul>
+      </div>
+
+      <div *ngIf="selectedCity === 'Paris'" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+      </div>
+
+      <div *ngIf="selectedCity === 'Tokyo'" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+    </div>
+  
+  </div>
+</aside>

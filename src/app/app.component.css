@@ -1,0 +1,10 @@
+*{
+    background-color: gray;
+}
+.content {
+    height: 100vh;
+    margin-left: 250px; /* Set sidebar width */
+    padding: 20px;
+    background-color: #F4F7F6; /* Set main content background color */
+  }
+  

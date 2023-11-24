@@ -1,0 +1,23 @@
+#cta-button-sidebar {
+    position: fixed;
+    top: 55px;
+    left: 0;
+    bottom: 0;
+    z-index: 40;
+    width: 264px; /* You can adjust the width as needed */
+    overflow-y: auto;
+    background-color: #ffffff; /* Set your desired background color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a subtle effect */
+    transition: transform 0.3s ease; /* Optional: Add smooth transition effect */
+  }
+  
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Optional: Ensure the content doesn't overflow */
+.hide-scrollbar {
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}

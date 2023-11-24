@@ -1,0 +1,29 @@
+<!-- Inside your component's HTML file (docs.component.html) -->
+
+<app-dashboard-head></app-dashboard-head>
+<div class="grid grid-cols-4 gap-4 overflow-auto p-3">
+  <div *ngFor="let card of cards shadow-lg rounded-lg" 
+       class="relative card1 h-52 text-center bg-white group" 
+       (mouseenter)="onCardHover(card)" 
+       (mouseleave)="onCardLeave()">
+    <div class="svg-cont flex items-center justify-center h-2/3">
+      <i [ngClass]="getSvgClass(card.type)" [ngStyle]="{ 'color': getStrokeColor(card.type), 'font-size': '38px' }"></i>
+    </div>
+    <div class="det flex justify-between pt-4 mx-2">
+      <div class="det-left flex flex-col items-start">
+        <p class="text-sm">{{card.name}}</p>
+        <p class="text-sm text-blue-400">size: {{ card.size }}</p>
+      </div>
+      <div class="det-right flex items-end">
+        {{ card.date | date: 'MMM d, y' }}
+      </div>
+    </div>
+    <!-- Delete button, initially hidden -->
+    <button *ngIf="hoveredCard === card" 
+            (click)="deleteCard(card)" 
+            class="absolute top-3 rounded-lg right-3 p-3  bg-red-500 text-white hidden group-hover:block" 
+            title="Delete">
+      <i class="fas fa-trash"></i>
+    </button>
+  </div>
+</div>

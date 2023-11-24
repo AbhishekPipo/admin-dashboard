@@ -1,0 +1,166 @@
+<app-dashboard-head></app-dashboard-head>
+<!-- component -->
+<!-- This is an example component -->
+<div class=" mx-3  shadow-lg rounded-lg  " style="height: 600px;" >
+
+<!-- end header -->
+<!-- Chatting -->
+<div class=" h-full flex flex-row justify-between bg-white">
+  <!-- chat list -->
+
+  <div class="flex flex-col px-3 pt-3  w-1/5 ">
+
+    <div class="search flex">
+
+    <button type="button" class="text-gray-900  bg-slate-100 border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium  text-sm px-3 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" class=" icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" /></svg>
+    </button>
+    <input type="text" id="first_name"  class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full h-9 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required>
+</div>
+
+<!-- profile.component.html -->
+<div class="profiles flex mt-3" *ngFor="let profile of profiles">
+    <img [src]="profile.image" class="h-12 w-12 object-contain rounded-full" alt="">
+    <div class="det pl-2">
+        <h5>{{ profile.name }}</h5>
+        <div class="dot-det flex items-center">
+            <p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-filled" width="12" height="12" viewBox="0 0 24 24" stroke-width="2" stroke="rgb(228,114,151)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M7 3.34a10 10 0 1 1 -4.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 4.995 -8.336z" stroke-width="0" fill="currentColor" />
+                </svg>
+            </p>
+            <p class="text-sm pl-1">{{ profile.lastOnline }}</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+  </div>
+
+
+  <!-- end chat list -->
+  <!-- message -->
+  <div class="w-full rounded-lg shadow-lg flex flex-col justify-between">
+
+<div class="msg-head p-3 flex justify-between items-center">
+    <div class="left flex gap-1.5">
+        <img src="/assets/user.png" class="object-cover w-12 h-12 rounded-full" alt="hi">
+        <div class="det">
+            <h5>Aiden Chavez
+            </h5>
+            <p class="text-sm">Last seen: 2 hours ago
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="right">
+<span class=" text-gray-800 text-xs font-medium me-2 px-3 py-2 rounded hover:bg-black dark:text-gray-400 border border-gray-500">
+    <i class="fas fa-camera"></i>
+
+</span>
+<span class=" text-red-800 text-xs font-medium me-2 px-3 py-2 rounded hover:bg-red-600 dark:text-red-400 border border-red-400">
+    <i class="fas fa-video"></i>
+
+</span>
+<span class=" text-green-800 text-xs font-medium me-2 px-3 py-2 rounded hover:bg-green-500 dark:text-green-400 border border-green-400">
+    <i class="fas fa-cogs"></i>
+
+</span>
+<span class=" text-yellow-800 text-xs font-medium me-2 px-3 py-2 rounded hover:bg-yellow-500 dark:text-yellow-300 border border-yellow-300">
+    <i class="fas fa-question"></i>
+
+</span>
+
+    </div>
+</div>
+<hr class="-mt-10"   
+size="20" 
+align="center"> 
+
+
+    <div class="flex flex-col mt-5 px-5">
+      <div class="flex justify-end mb-4">
+        <div
+          class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+        >
+          Welcome to group everyone !
+        </div>
+        <img
+          src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+      <div class="flex justify-start mb-4">
+        <img
+          src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+          at praesentium, aut ullam delectus odio error sit rem. Architecto
+          nulla doloribus laborum illo rem enim dolor odio saepe,
+          consequatur quas?
+        </div>
+      </div>
+      <div class="flex justify-end mb-4">
+        <div>
+          <div
+            class="mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+          >
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Magnam, repudiandae.
+          </div>
+
+          <div
+            class="mt-4 mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Debitis, reiciendis!
+          </div>
+        </div>
+        <img
+          src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+      </div>
+      <div class="flex justify-start mb-4">
+        <img
+          src="https://source.unsplash.com/vpOeXr5wmR4/600x600"
+          class="object-cover h-8 w-8 rounded-full"
+          alt=""
+        />
+        <div
+          class="ml-2 py-3 px-4 bg-gray-400 rounded-br-3xl rounded-tr-3xl rounded-tl-xl text-white"
+        >
+          happy holiday guys!
+        </div>
+      </div>
+    </div>
+    <div class="input-box p-3 flex  align-items">
+    
+        <button type="button" class="text-gray-900 rounded-lg bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium  text-sm px-3 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4"></path>
+             </svg>
+        </button>
+        <!-- <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter a Message" required> -->
+    
+        <input type="text" id="first_name"  class="rounded-lg bg-gray-50 border border-gray-300 text-gray-900 text-sm  focus:ring-blue-500 focus:border-blue-500 block w-full h-9 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter a Message" required>
+    
+    
+    </div>
+  </div>
+
+  </div>
+</div>
